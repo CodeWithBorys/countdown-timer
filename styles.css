@@ -1,0 +1,102 @@
+:root {
+  --blue: rgb(0, 110, 255);
+  --gray: #252525;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+  align-items: center;
+  background: #673ab7;
+}
+
+.timer__controls {
+  display: flex;
+}
+
+.timer__button {
+  width: 90px;
+  font-size: 1.5rem;
+  padding: 12px 0;
+  cursor: pointer;
+  margin: 10px;
+  border: 2px solid var(--blue);
+  border-radius: 12px;
+  outline: none;
+  background: white;
+  box-shadow: 0 0 0 3px white, 0px 2px 3px 5px var( --gray);
+}
+
+#customTime {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  outline: none;
+  padding: 15px;
+  margin-left: 10px;
+  width: 175px;
+  font-size: 1.3rem;
+  text-align: center;
+  border: 2px solid var(--blue);
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 0 0 3px white, 0px 2px 3px 5px var( --gray);
+}
+
+.timer__display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--blue);
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 0 10px white, 0px 5px 10px 15px var(--gray);
+  margin-top: -120px;
+}
+
+.timer__display-time-left{
+  font-size: 6rem;
+  margin-top: 40px;
+}
+
+.timer__display-end-time {
+font-size: 1.3rem;
+}
+
+.timer__display-reset {
+  position: relative;
+  font-size: 2.5rem;
+  outline: none;
+  color: var(--blue);
+  background: white;
+  border: 2px solid var(--blue);
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  border-radius: 50%;
+  left: 35%;
+  top: 15%;
+  box-shadow: 0 0 0 5px white, 2px 3px 10px 6px var(--gray);
+  transition: all .2s;
+}
+
+.timer__display-reset:hover {
+  background: var(--blue);
+  color: white;
+  border-color: white;
+  box-shadow: 0 0 0 5px var(--blue), 2px 3px 10px 6px var(--gray);
+}

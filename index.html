@@ -7,7 +7,21 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
+  <div class="container">
+    <div class="timer__controls">
+      <button data-time="20" class="timer__button">20 s</button>
+      <button data-time="300" class="timer__button">5 min</button>
+      <button data-time="1800" class="timer__button">30 min</button>
+      <form name="customTime" id="customTime">
+        <input type="text" name="minutes" placeholder="Enter minutes">
+      </form>
+    </div>
+    <div class="timer__display">
+      <h1 class="timer__display-time-left">05:00</h1>
+      <p class="timer__display-end-time">timer ends at 4:03</p>
+      <button class="timer__display-reset">&#8634;</button>
+    </div>
+  </div>
   <script src="scripts.js"></script>
 </body>
 </html>
