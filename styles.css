@@ -34,6 +34,7 @@
   outline: none;
   background: white;
   box-shadow: 0 0 0 3px white, 0px 2px 3px 5px var( --gray);
+  transition: all .2s;
 }
 
 #customTime {
@@ -52,6 +53,18 @@ input {
   border-radius: 12px;
   background: white;
   box-shadow: 0 0 0 3px white, 0px 2px 3px 5px var( --gray);
+  transition: all .2s;
+}
+
+.timer__button:hover,
+input:hover {
+  box-shadow: 0 0 0 3px var(--blue), 0px 2px 3px 5px var( --gray);
+  border: 2px solid white;
+}
+
+.timer__button:active {
+  box-shadow: 0 0 0 3px var(--blue), 0px 1px 3px 3px var( --gray);
+  transform: translateY(1px);
 }
 
 .timer__display {
@@ -71,10 +84,12 @@ input {
 .timer__display-time-left{
   font-size: 6rem;
   margin-top: 40px;
+  cursor: none;
 }
 
 .timer__display-end-time {
-font-size: 1.3rem;
+  font-size: 1.3rem;
+  cursor: none;
 }
 
 .timer__display-reset {
@@ -95,8 +110,10 @@ font-size: 1.3rem;
 }
 
 .timer__display-reset:hover {
-  background: var(--blue);
-  color: white;
   border-color: white;
   box-shadow: 0 0 0 5px var(--blue), 2px 3px 10px 6px var(--gray);
+}
+
+.timer__display-reset:active {
+  transform: scale(.9);
 }
