@@ -79,12 +79,14 @@ input:hover {
   background: white;
   box-shadow: 0 0 0 10px white, 0px 5px 10px 15px var(--gray);
   margin-top: -120px;
+  user-select: none;
 }
 
 .timer__display-time-left{
   font-size: 6rem;
   margin-top: 40px;
   cursor: none;
+  user-select: none;
 }
 
 .timer__display-end-time {
