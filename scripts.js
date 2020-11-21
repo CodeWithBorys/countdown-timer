@@ -2,8 +2,10 @@ let countdown;
 const timeDisplay = document.querySelector('.timer__display-time-left');
 const endTime = document.querySelector('.timer__display-end-time');
 const buttons = document.querySelectorAll('[data-time]');
+const resetTimer = document.querySelector('.timer__display-reset');
+let seconds;
 
-function timer(seconds) {
+function timer() {
   // clear existing timers if any
   clearInterval(countdown);
 
@@ -20,13 +22,13 @@ function timer(seconds) {
     }
 
     // display time
-    displayTimeLeft(secondsLeft)
+    displayTimeLeft(secondsLeft);
   }, 1000)
 }
 
-function displayTimeLeft(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const remainderSeconds = seconds % 60;
+function displayTimeLeft(sec) {
+  const minutes = Math.floor(sec / 60);
+  const remainderSeconds = sec % 60;
   const time = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
   document.title = time;
   timeDisplay.textContent = time;
@@ -40,14 +42,18 @@ function displayEndTime(timestamp) {
 }
 
 function startTimer() {
-  const seconds = parseInt(this.dataset.time);
-  timer(seconds);
+  seconds = parseInt(this.dataset.time);
+  timer();
 }
 
-buttons.forEach(button => button.addEventListener('click', startTimer))
+buttons.forEach(button => button.addEventListener('click', startTimer));
+
 document.customTime.addEventListener('submit', function(e) {
   e.preventDefault();
     const mins = this.minutes.value;
-    timer(mins * 60);
+    seconds = mins * 60;
+    timer();
     this.reset()
 });
+
+resetTimer.addEventListener('click', timer);
